@@ -1,0 +1,4 @@
+
+imap <C-l>f <ESC>:r !echo "static char *fn = \"FILE=%\";"<CR>
+nmap <C-l>f <ESC>:r !echo "static char *fn = \"FILE=%\";"<CR>
+

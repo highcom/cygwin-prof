@@ -1,0 +1,107 @@
+#
+# ~/.screenrc
+#
+# Written by Kaneko Toshiaki
+#
+# TODO bash上からではなく、直接screenを起動した場合、screenから起動される
+#      bashでは、screen の引数として指定されるコマンドに対してのバスが通っていない？
+#
+
+# ==============================================================================
+# Variablen
+# ==============================================================================
+escape				^zz
+
+altscreen			on					# Default: off
+autodetach			on					# Default: on
+crlf				off					# Default: off
+deflogin			on					# Default: on
+hardcopy_append		off					# Default: off
+startup_message		off					# Default: on
+#vbell				on
+defscrollback		1000				# Default: 100
+silencewait			30					# Default: 30
+shell				/bin/bash
+
+activity			"Activity in window %."
+										# 隠れているwindowで動きがあったときのメッセージ
+bell				"bell in window %."
+										# 隠れているwindowでbellが鳴ったときにメッセージ
+#vbell_msg			" *Fuck this bell ;-)* "
+
+defencoding			eucJP
+defkanji			eucJP				# ?
+
+# ==============================================================================
+# TERMCAP and TERMINFO
+# ==============================================================================
+termcapinfo cygwin|kterm*|screen*|vt100|xterm*	'hs:ts=\E]2;:fs=\007:ds=\E]0;screen\007'
+termcapinfo cygwin G0
+termcapinfo cygwin KJ=eucJP
+
+	# NOTE
+	# WEB で cygwin 日本語環境での screen の設定について調べると以下の設定
+	# で表示が出来るとなっている
+	#
+	# Screen version 4.00.02 (FAU) 5-Dec-03
+	# 上記のバージョンの screen で色々試したが日本語表示に関わる設定は次の項目
+	# ・termcapinfo cygwin G0
+	# ・defencoding SJIS
+	# ・defkanji eucJP
+	# この設定だと、screen on Rxvt をマウスで日本語をコピーすると文字コードに関
+	# する問題が発生する
+	#
+	# 以下の内容を設定を行うと、日本語のペーストは正しく行われるが、screen に対
+	# するキー操作が行えなくなる（windowlist等）
+	# ・termcapinfo cygwin KJ=SJIS
+	#
+
+
+# ==============================================================================
+# Caption
+# ==============================================================================
+#caption always "%H[%n]: [%Lw] %=%m/%d %c"
+caption always "%H[%n]: [%Lw] %=%m/%d %c"
+
+# ==============================================================================
+# Hardstatus
+# ==============================================================================
+hardstatus string "[SCREEN:%n] %h"
+#hardstatus alwayslastline "%H[%n]: %Y/%m/%d(%D) %c[%Lw]"
+
+windowlist title  'Num Name'
+windowlist string '%3n %t'
+
+# ==============================================================================
+# Key Bind
+# ==============================================================================
+bind w windowlist -b
+
+# Change the way screen does highlighting for text marking 
+# and  printing  messages.
+#
+# explanation about color codes:
+#
+# sorendition <attribute> <color>
+# sorendition ab cd  //  a,c=bg  b,d=fg
+#
+#  ab             c&d       c&d
+#  00 normal       0 black   4 blue
+#  1- invert       1 red     5 magenta
+#  25 bright       2 green   6 cyan
+#  3- 1+2          3 brown   7 silver
+#
+# * attributes are cumulative, so a=3 is invert+bright
+# * colors use the same codes for bg & fg colors,
+#   so cd=22 all you get is green, text unreadable
+#
+# examples:
+#  00 02 - black bg (0), green fg (2), no attributes (00)
+#  20 30 - brown bg (3), black fg (0), bright bg (2) -> turns yellow
+#  35 74 - silver bg (7), blue fg (4), invert, bright bg (3), bright fg (5)
+#
+# Coloring:
+sorendition  35 70
+
+# EOF
+

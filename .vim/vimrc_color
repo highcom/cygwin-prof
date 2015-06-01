@@ -1,0 +1,380 @@
+"
+" Vim color file
+"
+"
+
+set background=dark
+hi clear
+if exists("syntax_on")
+  syntax reset
+endif
+
+"let g:colors_name = "mycolor"
+
+" ---------------------------------------------------------------------------------------
+"hi Normal								guibg=#041016						guifg=#EEEEBB
+hi Normal								guibg=#181818						guifg=#EEEEBB
+
+hi Cursor								guifg=bg								guibg=cyan
+hi lCursor							guifg=bg								guibg=green
+
+hi Statement						ctermfg=yellow					cterm=bold 
+hi Statement						guifg=#EEEE33						gui=bold
+
+hi String								ctermfg=lightgreen			cterm=none
+hi String								guifg=lightgreen				gui=none
+
+hi Character						ctermfg=green
+"hi Character						guifg=#44FF00
+
+hi Number								ctermfg=lightmagenta
+"hi Number								guifg=lightmagenta
+
+hi Boolean							ctermfg=lightmagenta
+"hi Boolean							guifg=lightmagenta
+
+hi Include							ctermfg=none
+"hi Include							guifg=none
+
+hi PreProc							ctermfg=lightmagenta		cterm=bold
+hi PreProc							guifg=magenta						gui=bold
+
+"hi Define							ctermfg=yellow					cterm=bold
+"hi Define							guifg=yellow						gui=bold
+hi link Define					PreProc
+
+"hi Macro								ctermfg=yellow					cterm=bold
+"hi Macro								guifg=yellow						gui=bold
+hi link Macro						PreProc
+
+hi Type									ctermfg=darkgreen				cterm=bold
+hi Type									guifg=green							gui=bold
+
+
+hi Identifier						ctermfg=green						cterm=bold
+"hi Identifier					guifg=lightgreen				gui=bold
+hi Identifier						guifg=#44FF00						gui=bold
+
+hi SpecialKey						ctermfg=darkyellow			cterm=none
+hi SpecialKey						guifg=darkyellow				gui=none
+
+hi NonText							ctermfg=yellow
+"hi NonText							guifg=yellow
+
+hi Directory						ctermfg=cyan						cterm=none
+hi Directory						guifg=cyan							gui=none
+
+hi ErrorMsg							ctermfg=yellow					ctermbg=darkred					cterm=bold
+hi ErrorMsg							guifg=yellow						guibg=darkred						gui=bold
+
+hi IncSearch						ctermbg=darkred					cterm=bold
+hi IncSearch						guibg=darkred						gui=bold
+
+"hi Search								ctermfg=white						ctermbg=darkblue				cterm=bold
+hi Search								ctermfg=yellow						ctermbg=darkblue				cterm=bold
+"hi Search								guifg=white							guibg=darkblue					gui=bold
+hi Search								guifg=yellow							guibg=darkblue					gui=bold
+
+hi MoreMsg							ctermfg=darkblue				ctermbg=white
+hi MoreMsg							guifg=darkblue					guibg=white
+
+hi ModeMsg							cterm=bold
+"hi ModeMsg							gui=bold
+
+hi LineNr								ctermfg=brown
+"hi LineNr								guifg=brown
+
+hi Question							ctermfg=darkred					cterm=bold
+hi Question							guifg=darkred						gui=bold
+
+hi StatusLine						ctermfg=white						ctermbg=darkblue				cterm=bold
+hi StatusLine						guifg=white							guibg=darkblue					gui=bold
+
+hi StatusLineNC					ctermfg=darkblue				ctermbg=white						cterm=bold
+hi StatusLineNC					guifg=darkblue					guibg=white							gui=bold
+
+hi VertSplit						cterm=reverse
+hi VertSplit						gui=reverse
+
+hi Title								ctermfg=magenta					cterm=bold
+hi Title								guifg=magenta						gui=bold
+
+hi Visual								cterm=reverse
+hi Visual								guifg=fg								guibg=bg								gui=reverse
+"hi Visual								guifg=black							guibg=lightgrey					gui=none
+
+hi VisualNOS						cterm=bold,underline
+"hi VisualNOS						gui=bold,underline
+
+hi WarningMsg						ctermfg=red							cterm=bold
+hi WarningMsg						guifg=red								gui=bold
+
+hi WildMenu							ctermfg=black						ctermbg=yellow
+"hi WildMenu							guifg=black				guibg=yellow
+
+hi Folded								ctermfg=blue						ctermbg=white						cterm=none
+hi Folded								guifg=blue							guibg=white							gui=none
+"hi Folded								ctermfg=darkyellow
+"hi Folded								guifg=darkyellow
+
+hi FoldColumn						ctermfg=cyan						ctermbg=black						cterm=none
+"hi FoldColumn						guifg=lightyellow		guibg=darkblue					gui=none
+
+hi SignColumn						ctermfg=cyan						ctermbg=black						cterm=none
+hi SignColumn						guifg=lightyellow		guibg=darkblue					gui=none
+
+hi Comment							ctermfg=darkcyan				cterm=none
+hi Comment							guifg=cyan							gui=none
+
+hi Constant							ctermfg=lightmagenta		cterm=bold
+hi Constant							guifg=magenta						gui=bold
+
+hi Special							ctermfg=yellow
+hi Underlined						ctermfg=darkblue				cterm=bold,underline 
+
+hi Ignore								ctermfg=darkblue
+"hi Ignore								guifg=darkblue
+
+"hi Error								ctermfg=white				ctermbg=darkred
+hi Error								ctermbg=darkred
+
+hi Todo									ctermfg=yellow					ctermbg=darkred					cterm=bold
+hi Todo									guifg=yellow						guibg=darkred						gui=bold
+
+"hi Tag									cterm=underline
+"hi Tag									gui=underline
+
+hi MatchParen						ctermfg=white						ctermbg=darkblue				cterm=bold
+
+" ---------------------------------------------------------------------------------------
+hi link	StorageClass		Type
+hi link	Structure				Type
+hi link	Typedef					Type
+hi link	Float						Number
+hi link	Tag							Special
+hi link	SpecialChar			Special
+hi link	Delimiter				Special
+hi link	SpecialComment	Special
+hi link	Debug						Special
+
+hi link	Conditional			Statement
+hi link	Repeat					Statement
+hi link	Label						Statement
+hi link	Operator				Statement
+hi link	Keyword					Statement
+hi link	Exception				Statement
+
+hi link	Function				Identifier
+
+hi link	PreCondit				PreProc
+
+" ---------------------------------------------------------------------------------------
+
+" ---------------------------------------------------------------------------------------
+" Diff Setting
+" ---------------------------------------------------------------------------------------
+hi DiffAdd							ctermbg=darkblue
+"hi DiffAdd							guibg=darkblue
+
+"hi DiffChange						ctermbg=brown
+hi DiffChange						ctermbg=darkmagenta
+"hi DiffChange						guibg=darkmagenta
+
+"hi DiffDelete						ctermfg=yellow					ctermbg=darkred
+hi DiffDelete						ctermfg=darkblue				ctermbg=darkyellow
+"hi DiffDelete						guifg=darkblue				guibg=darkyellow
+
+hi DiffText							ctermbg=darkred
+"hi DiffText							guibg=darkred
+
+" ---------------------------------------------------------------------------------------
+" Shell Script Setting
+" ---------------------------------------------------------------------------------------
+"hi shAlias							ctermfg=cyan				ctermbg=black		cterm=bold
+hi shAlias							ctermfg=lightcyan		cterm=bold
+"hi shCharClass					ctermfg=white				ctermbg=black		cterm=none
+"hi shCharClass					cterm=reverse
+
+"hi shConditional				ctermfg=green				cterm=bold
+"hi shConditional				guifg=green					cterm=bold
+hi link shConditional		Identifier
+
+"hi shDeref							ctermfg=white				ctermbg=black		cterm=none
+"hi shFunction						ctermfg=green			ctermbg=black		cterm=bold
+
+"hi shFunction						ctermfg=green				cterm=bold
+"hi shFunction						guifg=#44FF00				gui=bold
+hi link	shFunction			Identifier
+
+"hi shOperator						ctermfg=green				cterm=bold
+"hi shOperator						guifg=#44FF00				gui=bold
+hi link shOperator			Identifier
+
+"hi shStatement					ctermfg=white				ctermbg=black		cterm=none
+hi shStatement					cterm=none
+"hi shShellVariables			ctermfg=cyan			ctermbg=black		cterm=bold
+hi shShellVariables			ctermfg=lightcyan		cterm=bold
+"hi shSpecial						ctermfg=yellow			ctermbg=black		cterm=none
+hi shSpecial						ctermfg=yellow			cterm=none
+
+"hi shVariable						cterm=none
+hi shVariable						ctermfg=white				ctermbg=none		cterm=bold
+"hi shVariable						guifg=none					guibg=none			gui=bold
+
+" -----------------------------------------------------------------------------
+" Help Setting
+" -----------------------------------------------------------------------------
+
+
+" -----------------------------------------------------------------------------
+" Perl Setting
+" -----------------------------------------------------------------------------
+hi link	perlIdentifier	none
+
+hi perlSpecial							ctermfg=yellow	cterm=none
+hi perlSpecialMatch					ctermfg=white		cterm=bold
+
+hi perlIdentifier						cterm=none
+
+hi perlMethod								ctermfg=green				cterm=bold
+"hi perlFunctionName			ctermfg=yellow			cterm=bold
+
+hi perlFunctionName					ctermfg=green			cterm=bold
+hi perlFunctionPrototype		ctermfg=none			cterm=none
+
+hi perlStatement						ctermfg=cyan			cterm=bold
+
+hi perlStatementStorage			ctermfg=yellow	cterm=bold
+hi perlStatementControl			ctermfg=yellow	cterm=bold
+hi perlStatementPackage			ctermfg=cyan		cterm=bold
+
+hi perlStatementSub					ctermfg=yellow	cterm=bold
+
+hi perlFiledescRead					ctermfg=white		cterm=bold
+hi link	perlFiledescStatement perlFiledescRead
+
+
+
+
+
+
+" -----------------------------------------------------------------------------
+" Makefile Setting
+" -----------------------------------------------------------------------------
+"hi makeIdent						ctermfg=cyan				ctermbg=black   cterm=bold
+hi makeIdent						ctermfg=lightcyan		cterm=bold
+"hi makeTarget						ctermfg=yellow		ctermbg=black   cterm=bold
+hi makeTarget						ctermfg=yellow			cterm=bold
+"hi makeCommands					ctermfg=greeni		ctermbg=black   cterm=bold
+hi makeCommands					ctermfg=green				cterm=bold
+
+" -----------------------------------------------------------------------------
+" Mutt Setting
+" -----------------------------------------------------------------------------
+"hi muttrcCommand				ctermfg=yellow    ctermbg=black   cterm=bold
+hi muttrcCommand				ctermfg=yellow			cterm=bold
+
+" -----------------------------------------------------------------------------
+" Memo Setting
+" -----------------------------------------------------------------------------
+hi memoTitle						ctermfg=green				cterm=bold
+hi memoDate							ctermfg=cyan				cterm=bold
+hi memoUrl							ctermfg=yellow			cterm=bold
+
+
+" -----------------------------------------------------------------------------
+" HTML Setting
+" -----------------------------------------------------------------------------
+hi htmlHead							ctermfg=green				cterm=bold
+hi htmlHead							guifg=green					gui=bold
+
+hi htmlTitle						ctermfg=none				cterm=bold
+hi htmlTitle						guifg=fg						gui=bold
+
+hi htmlArg							ctermfg=cyan				cterm=bold
+hi htmlArg							guifg=cyan					gui=bold
+
+hi htmlString						ctermfg=lightgreen	cterm=none
+hi htmlString						guifg=lightgreen		gui=none
+
+hi htmlValue 						ctermfg=lightgreen	cterm=none
+hi htmlValue 						guifg=lightgreen		gui=none
+
+hi htmlLink							ctermfg=none				cterm=none
+hi htmlLink							guifg=fg						gui=none
+
+hi htmlH1								ctermfg=none				cterm=bold
+hi htmlH1								guifg=fg						gui=bold
+
+hi htmlTag							ctermfg=yellow			cterm=none
+hi htmlTag							guifg=yellow				gui=none
+
+hi htmlEndTag						ctermfg=yellow			cterm=none
+hi htmlEndTag						guifg=yellow				gui=none
+
+hi htmlTagName					ctermfg=yellow			cterm=none
+hi htmlTagName					guifg=yellow				gui=none
+
+" -----------------------------------------------------------------------------
+" 2ch Viewer Chalice Setting
+" -----------------------------------------------------------------------------
+hi 2chUnderlined				ctermfg=yellow			cterm=none
+hi 2chUnderlined				guifg=yellow				gui=none
+
+hi 2chThreadTitleLabel	ctermfg=yellow			ctermbg=red							cterm=bold
+hi 2chThreadTitleLabel	guifg=yellow				guibg=red								gui=bold
+
+hi 2chThreadNumber			cterm=bold
+hi 2chThreadNumber			gui=bold
+
+hi 2chThreadFrom				ctermfg=cyan				cterm=none
+hi 2chThreadFrom				guifg=cyan					gui=none
+
+hi 2chThreadDate				ctermfg=green				cterm=none
+hi 2chThreadDate				guifg=green					gui=none
+
+hi 2chThreadMail				ctermfg=blue				cterm=none
+hi 2chThreadMail				guifg=blue					gui=none
+
+hi 2chThreadRef					ctermfg=cyan				cterm=bold
+hi 2chThreadRef					guifg=cyan					gui=bold
+
+hi 2chThreadQuote1			ctermfg=cyan				cterm=none
+hi 2chThreadQuote1			guifg=cyan					gui=none
+
+hi 2chThreadQuote2			ctermfg=yellow			cterm=none
+hi 2chThreadQuote2			guifg=yellow				gui=none
+
+hi 2chThreadCount				ctermfg=cyan				cterm=bold 
+hi 2chThreadCount				guifg=cyan					gui=bold 
+
+hi 2chBoardBoard				ctermfg=cyan				cterm=none
+hi 2chBoardBoard				guifg=cyan					gui=none
+					
+hi 2chBoardCategory			ctermfg=magenta			ctermbg=white						cterm=bold
+hi 2chBoardCategory			guifg=magenta				guibg=white							gui=bold
+
+hi 2chThreadInfoLabel		ctermfg=yellow			ctermbg=red
+hi 2chThreadInfoLabel		guifg=yellow				guibg=red
+
+hi 2chThreadNewArticles	ctermbg=blue
+hi 2chThreadNewArticles	guibg=blue
+
+" -----------------------------------------------------------------------------
+" PHP Setting
+" -----------------------------------------------------------------------------
+hi phpEnvVar						ctermfg=white
+hi phpIntVar						ctermfg=white
+hi phpIdentifier				ctermfg=white
+
+" -----------------------------------------------------------------------------
+" opsplorer Setting
+" -----------------------------------------------------------------------------
+hi OpsFile							ctermfg=white
+hi OpsFile							guifg=white
+
+hi OpsNode							ctermfg=lightcyan				cterm=bold
+hi OpsNode							guifg=lightcyan					gui=bold
+
+" EOF
+
